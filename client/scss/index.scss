@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 10px;
+}
+
+body {
+	background-color: #2B4162;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+li {
+	padding-bottom: 10px;
+}
+
+.feedback {
+	background-color: #E1FF3D;
+	font-size: 1.5em;
+	color: #233d4d;
+	height: auto;
+	margin-bottom: 15px;
+/*	border-radius: 4px;*/
+	padding: 5px;
+}
+
+.feedback-text{
+	font-family: 'Homemade Apple';
+	font-size: .9em;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.interaction {
+	background-color: white;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+
+.game {
+
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	width: 350px;
+	height: auto;
+	margin: 0 auto;
+	background-color: white;
+/*	border-radius: 4px;*/
+}
+
+.hidden {
+	display: none;
+}
+
+.total-guesses {
+	color: #2B4162;
+	padding-bottom: 10px;
+}
+
+.newgame-link {
+	padding-bottom:20px;
+	float: right;
+}
+
+.newgame-link:hover, .instructions-link:hover {
+	color: #E1FF3D;
+}
+
+.instructions-link {
+	padding-bottom:20px;
+	float: left;
+}
+
+.instructions-container {
+	/*background-color: green;*/
+	margin: 0 auto;
+	width: 350px;
+	height: auto;
+}
+
+.instructions-list {
+	text-align: left;
+	padding: 10px;
+}
+
+.game-footer {
+	margin: 10px;
+	background-color: white
+}
+
+
+.input-guess {
+	width: 150px;
+   height: 25px;
+   margin-bottom: 15px;
+	border: 1px gray solid;
+	border-radius: 4px;
+}
+
+.guess-button, .instructions-button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: auto;
+	width: 80px;
+   font-size: 12px;
+	border: 1px gray solid;
+	border-radius: 4px;
+	background-color: white;
+}
+
+.guess-button:hover, .newgame-button:hover {
+	background-color: #7CA4C1;
+}
+
+.previous-guesses{
+	color: #2B4162;
+}
