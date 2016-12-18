@@ -5,6 +5,7 @@ import * as actions from '../actions'
 export class Interact extends React.Component {
   constructor(props) {
     super(props)
+    console.log(props)
     this.handleKeyPress = this.handleKeyPress.bind(this)
     this.makeGuess = this.makeGuess.bind(this)
   }
