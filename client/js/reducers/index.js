@@ -71,9 +71,16 @@ export const numberReducer = (state = initialState, action) => {
 
 		case 'GET_FEWEST_ERROR':
 			console.log('reducer GET_FEWEST_ERROR', action.error)
-			return state;
+			return state
 
 //TODO: Add SET_FEWEST & SET_FEWEST_ERROR
+    case 'SET_FEWEST':
+      console.log('reducer SET_FEWEST')
+      return Object.assign({}, state, {fewestGuesses: action.fewest})
+
+    case 'SET_FEWEST_ERROR':
+      console.log('reducer SET_FEWEST_ERROR')
+      return state
 
     default:
       return state

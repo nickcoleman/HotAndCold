@@ -57,39 +57,42 @@ export const fetchFewest = () => {
 	}
 }
 
-// ========= Set fewest errors ===========
+// ========= Set Fewest Guesses ===========
 
-// export const SET_FEWEST = 'SET_FEWEST'
-// export const 	setFewest = fewest => ({
-// 	type: SET_FEWEST,
-// 	fewest
-// })
-//
-// export const SET_FEWEST_ERROR = 'SET_FEWEST_ERROR'
-// export const 	setFewestError = fewest => ({
-// 	type: SET_FEWEST_ERROR,
-// 	fewest
-// })
-//
-// export const postFewest = () => {
-// 	console.log('postFewest called')
-// 	const url = 'https://localhost:8080/fewest'
-// 	return fetch(url, {
-// 		method: 'post',
-//     headers: {
-//       "Content-type": "application/json; charset=utf-8"
-//     },
-//     body: JSON.stringify({"fewest": fewestGuesses})
-// 	})
-// 	.then (response => {
-// 		if (!response.ok) {
-// 			const error = new Error(response.statusText)
-// 			error.response = response
-// 			throw error;
-// 		}
-// 		return response;
-// 	})
-// 	.then (response = response.json())
-// 	.then (dispatch = (setFewest(data)))
-// 	.catch (error => dispatch(setFewestError(error)))
-// }
+export const SET_FEWEST = 'SET_FEWEST'
+export const 	setFewest = fewest => ({
+	type: SET_FEWEST,
+	fewest
+})
+
+export const SET_FEWEST_ERROR = 'SET_FEWEST_ERROR'
+export const 	setFewestError = fewest => ({
+	type: SET_FEWEST_ERROR,
+	fewest
+})
+
+export const postFewest = () => {
+	console.log('postFewest called')
+	const url = 'https://localhost:8080/fewest'
+	return fetch(url, {
+		method: 'post',
+    headers: {
+      "Content-type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({"fewest": fewestGuesses})
+	})
+	.then (response => {
+		if (!response.ok) {
+			const error = new Error(response.statusText)
+			error.response = response
+			throw error;
+		}
+		return response;
+	})
+	.then (response = response.json())
+	.then (data => {
+		console.log("postFewest data: ", data)
+		dispatch(setFewest(data))
+	})
+	.catch (error => dispatch(setFewestError(error)))
+}

@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 const HOST = process.env.HOST;
 const PORT = process.env.PORT || 8080;
 
-console.log(`Server running in ${process.env.NODE_ENV} mode`);
+console.log(`Backend Server running in ${process.env.NODE_ENV} mode`);
 
 const app = express();
 
@@ -31,7 +31,7 @@ if (require.main === module) {
 
 const jsonParser = bodyParser.json()
 
-
+//TODO: Add MongoDB
 let fewestGuesses = 101
 
 app.get('/fewest', function(req, res) {
@@ -41,11 +41,15 @@ app.get('/fewest', function(req, res) {
 // /fewest-guesses
 app.post('/fewest', jsonParser, function(req, res) {
   console.log('app.post /fewest')
-  console.log(req.body.fewestGuesses)
-  	if (req.query.fewestGuesses < fewestGuesses) {
-  		fewestGuesses = req.query.fewestGuesses
-  	}
-    return res.status(200).json(fewestGuesses)
+  console.log(req.body)
+  if (!req.body.fewestGuesses) {
+    return res.status(400)
+  }
+
+	if (req.body.fewestGuesses < fewestGuesses) {
+		fewestGuesses = req.body.fewestGuesses
+	}
+  return res.status(200).json(fewestGuesses)
 });
 
 // app.get('/:id', (req, res) => {

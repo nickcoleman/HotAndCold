@@ -1,12 +1,12 @@
-import 'babel-polyfill'
+require ('babel-polyfill')
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import store from './store'
 import Game from './components/game'
-// import * as actions from './actions'
-console.log(`Client running in ${process.env.NODE_ENV} mode`)
+import * as actions from './actions'
+console.log(`Client Side running in ${process.env.NODE_ENV} mode`)
 
 // store.dispatch(actions.newGame())
 // store.dispatch(actions.guessNumber(20))
